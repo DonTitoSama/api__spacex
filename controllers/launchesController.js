@@ -1,12 +1,12 @@
-const Post = require('../models/launchesModels');
+const Launches = require('../models/launchesModels');
 const launchesProvider = require('../providers/launchesProvider');
 
 
 exports.listAllLaunches = async (req, res) => {
     try {
-        const posts = await Post.find({});
+        const launches = await Launches.find({});
         res.status(200);
-        res.json(posts);
+        res.json(launches);
     } catch (error) {
         res.status(500);
         console.log(error);
@@ -16,7 +16,7 @@ exports.listAllLaunches = async (req, res) => {
 
 exports.createALaunche = async (req, res) => {
     try {
-        let newPost = new Post(req/body);
+        let newLaunche = new Launches(req/body);
 
         let randomTextPromise = launchesProvider.getRandomText();
 
@@ -26,22 +26,11 @@ exports.createALaunche = async (req, res) => {
             newPost.content = response;
         }
 
-        let post = await newPost.save();
+        let post = await newLaunche.save();
         res.status(201).json(post);
 
     } catch  (error) {
         console.error(error);
         res.status(401).json({message: "requete invalide"});
-    }
-}
-
-exports.modifiedAPost = async (req, res) => {
-    try {
-        const post = await Post.findByIdAndUpdate(req.params.id_post, req.body, {new: true});
-        res.status(200);
-        res.json(post);
-    } catch (error) {
-        res.status(500);
-        res.json({message: 'Erreur serveur'});
     }
 }

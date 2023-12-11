@@ -2,21 +2,27 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let launchesSchema = new Schema ({
-    name: {
+    flight_id: {
         type: String,
         required: true
     },
-    message: {
+    flight_number: {
+        type: Number,
+        required: true
+    },
+    mission_name: {
         type: String,
         required: true
     },
-    created_at: {
+    mission_id: {
+        type: Number,
+        required: true
+    },
+    launch_year: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        required: true
     },
-    post_id: {
-        type: String
-    }
 });
 
-module.exports = mongoose.model('Com', launchesSchema);
+module.exports = mongoose.model('Launches', launchesSchema);

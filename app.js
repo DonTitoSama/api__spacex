@@ -10,7 +10,7 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 const launchesRoute = require(`./routes/launchesRoute`);
-app.use('/posts', launchesRoute);
+app.use('/launches', launchesRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

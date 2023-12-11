@@ -5,9 +5,8 @@ const launchesController = require('../controllers/launchesController');
 
 // /launches
 router
-    .route('/posts/:id_post/comments')
+    .route('/launches/')
     .get(launchesController.listAllLaunches)
     .post(launchesController.createALaunche);
-
 
 module.exports = router;
