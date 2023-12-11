@@ -3,24 +3,19 @@ const Schema = mongoose.Schema;
 
 let launchesSchema = new Schema ({
     flight_id: {
-        type: String,
-        required: true
+        type: String
     },
     flight_number: {
-        type: Number,
-        required: true
+        type: Number
     },
     mission_name: {
-        type: String,
-        required: true
+        type: String
     },
     mission_id: {
-        type: Number,
-        required: true
+        type: Schema.Types.Mixed,
     },
     launch_year: {
-        type: Date,
-        required: true
+        type: Date
     },
 });
 
