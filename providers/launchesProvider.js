@@ -1,9 +1,8 @@
-const axios = require("axios");
+// provider/spacexProvider.js
+const axios = require('axios');
 
-const baseUrl = 'https://api.spacexdata.com/v3/launches';
+const spacexAPI = axios.create({
+  baseURL: 'https://api.spacexdata.com/v4/',
+});
 
-exports.getRandomText = async () => {
-    let response =  await axios.get(baseUrl + '/plaintext', {responseType: 'text'});
-    return response.data;
-}
-
+module.exports = spacexAPI;

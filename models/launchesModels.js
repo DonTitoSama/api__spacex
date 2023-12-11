@@ -20,9 +20,8 @@ let launchesSchema = new Schema ({
     },
     launch_year: {
         type: Date,
-        default: Date.now,
         required: true
     },
 });
 
-module.exports = mongoose.model('Launches', launchesSchema);
+module.exports = mongoose.model('Launch', launchesSchema);
