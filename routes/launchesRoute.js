@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
+// liaison au controller
 const launchesController = require('../controllers/launchesController');
 
-// /launches
+// routes pour les launches
 router
     .route('/')
     .get(launchesController.getAllLaunches)

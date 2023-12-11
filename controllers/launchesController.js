@@ -1,6 +1,9 @@
 const Launches = require('../models/launchesModels');
 const launchesProvider = require('../providers/launchesProvider');
 
+
+// méthode pour lister les launches (via PostMan)
+
 exports.getAllLaunches = async (req, res) => {
   try {
     const response = await launchesProvider.listAll();
@@ -11,6 +14,8 @@ exports.getAllLaunches = async (req, res) => {
     res.status(500).json({ error: 'Une erreur s\'est produite' });
   }
 };
+
+// méthode pour injecter les launches en base de données (MongoDB)
 
 exports.postAllLaunches = async (req, res) => {
   try {    

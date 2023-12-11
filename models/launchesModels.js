@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// création du model Launches
 let launchesSchema = new Schema ({
     flight_id: {
         type: String

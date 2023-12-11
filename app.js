@@ -9,6 +9,7 @@ mongoose.connect('mongodb://0.0.0.0:27017/api');
 app.use(express.urlencoded());
 app.use(express.json());
 
+// définition des routes
 const launchesRoute = require(`./routes/launchesRoute`);
 app.use('/launches', launchesRoute);
 
